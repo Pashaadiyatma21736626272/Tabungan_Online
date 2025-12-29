@@ -27,11 +27,12 @@ def Lihat_saldo():
 def Ambil_saldo():
   global Rekening
   print(f'Saldo Kamu Sekarang ====> Rp {format_uang(Rekening)}')
-  uang = int(input('Masukkan Saldo Yang Mau Diambil :'))
+  uang = int(input('Masukkan Saldo Yang Mau Di Ambil :'))
+  print(f'Rp {format_uang(uang)} Saldo Yang Akan Diambil')
   if uang <= Rekening:
     Rekening -= uang
     keterangan = input('Alasan Pengambilan : ')
-    save = insert_saldo(0, uang, keterangan, Rekening)  
+    save = insert_saldo(0, uang, keterangan, Rekening)
     print(f'Rp {format_uang(uang)} => Telah Diambil Dari Rekening ')
     print(save)
   else:
